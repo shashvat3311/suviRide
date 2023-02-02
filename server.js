@@ -5,7 +5,7 @@ const port=process.env.PORT||5500
 const cors=require('cors')
 const indexrouter=require('./router')
 app.use(express.json())
-
+const connection=require('./dbConnection')
 
 app.use(indexrouter)
 
