@@ -7,6 +7,7 @@ const user_controller=require('./controllers/user.controller')
 
 router.post('/user/Registrations',user_controller.UserRegisteration)
 
+router.post('/user/login',user_controller.userLogin)
 //******************************************* */
 
 

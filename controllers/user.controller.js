@@ -1,14 +1,14 @@
 //Random OTP generation
 const { request, response } = require("express");
 const path = require("path");
-const db = require("../dbConnection");
+// const db = require("../dbConnection");
 const twilio = require("twilio");
 const jwt = require("jsonwebtoken");
 let x;
 const generateOtp = () => {
   var min = 100000;
   var max = 999999;
-  return Math.floor("" + Math.random() * (max - min + 1) + min);
+  console.log(Math.floor("" + Math.random() * (max - min + 1) + min));
 };
 
 const UserRegisteration = async (req, res) => {
@@ -50,11 +50,7 @@ const MobileValidation = async (req, res) => {
   );
 };
 
-// const GenerateOtp = async (req, response) => {
-//   const client = new ("AC8a38f34f1e2e69e78bafd3775a5e7910",
-//   "4e7b38e3ac3c575a35a54c6d9ea8d6f3")();
-//   response.status(200).send({});
-// };
+
 
 const check_VersionUpdate = async (req, res) => {
   try{
@@ -105,4 +101,11 @@ catch(err){
 }
 }
 
-module.exports = { UserRegisteration, MobileValidation ,};
+//Demo 
+const userLogin=async(req,res)=>{
+  generateOtp();
+
+}
+
+
+module.exports = { UserRegisteration, MobileValidation ,userLogin};
